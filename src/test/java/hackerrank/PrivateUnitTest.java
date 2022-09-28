@@ -1,6 +1,7 @@
 package hackerrank;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import org.junit.BeforeClass;
@@ -39,7 +40,7 @@ public class PrivateUnitTest {
     @Test
     public void _10_validateFurnitureCostAndQuantity() {
 //        ArrayList<Furniture> orderedFurniture = furnitureFactory.getOrderedFurniture();
-        HashMap<Furniture, Integer> orderedFurniture = furnitureFactory.getOrderedFurniture();
+        Map<Furniture, Integer> orderedFurniture = furnitureFactory.getOrderedFurniture();
 
         assertEquals(21, orderedFurniture.values().stream().mapToInt(Integer::intValue).sum());
 

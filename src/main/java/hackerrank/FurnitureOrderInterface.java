@@ -1,6 +1,6 @@
 package hackerrank;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public interface FurnitureOrderInterface {
 
@@ -13,7 +13,7 @@ public interface FurnitureOrderInterface {
     /**
      * @return All the ordered furniture as a mapping of Furniture types to Integer quantities.
      */
-    public HashMap<Furniture, Integer> getOrderedFurniture();
+    public Map<Furniture, Integer> getOrderedFurniture();
 
     /**
      * @param type The type of Furniture

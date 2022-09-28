@@ -1,6 +1,6 @@
 package hackerrank;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 public class FurnitureOrder implements FurnitureOrderInterface {
@@ -11,15 +11,15 @@ public class FurnitureOrder implements FurnitureOrderInterface {
      * Initialize a new mapping of Furniture types to order quantities.
      */
     FurnitureOrder() {
-        furnitureTypeQuantities = new HashMap<>();
+        furnitureTypeQuantities = new EnumMap<>(Furniture.class);
     }
 
     public void addToOrder(final Furniture type, int furnitureCount) {
         furnitureTypeQuantities.put(type, furnitureCount);
     }
 
-    public HashMap<Furniture, Integer> getOrderedFurniture() {
-        return (HashMap<Furniture, Integer>) furnitureTypeQuantities;
+    public Map<Furniture, Integer> getOrderedFurniture() {
+        return furnitureTypeQuantities;
     }
 
     public float getTotalOrderCost() {
