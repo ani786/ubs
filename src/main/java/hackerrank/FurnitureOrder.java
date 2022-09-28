@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FurnitureOrder implements FurnitureOrderInterface {
 
-      Map<Furniture, Integer> furnitureTypeQuantities;
+    Map<Furniture, Integer> furnitureTypeQuantities;
 
     /**
      * Initialize a new mapping of Furniture types to order quantities.
@@ -25,7 +25,7 @@ public class FurnitureOrder implements FurnitureOrderInterface {
     public float getTotalOrderCost() {
         float cost;
         float totalCost = 0.0F;
-        for (Map.Entry<Furniture,Integer>  furnitureIntegerEntry: furnitureTypeQuantities.entrySet()) {
+        for (Map.Entry<Furniture, Integer> furnitureIntegerEntry : furnitureTypeQuantities.entrySet()) {
             cost = Furniture.valueOf(furnitureIntegerEntry.getKey().name()).cost() * furnitureIntegerEntry.getValue();
             totalCost = cost + totalCost;
         }
@@ -33,14 +33,15 @@ public class FurnitureOrder implements FurnitureOrderInterface {
     }
 
     public int getTypeCount(Furniture type) {
-        return furnitureTypeQuantities.get(Furniture.valueOf(type.name())) != null ? furnitureTypeQuantities.get(Furniture.valueOf(type.name())): 0;
-      }
+        return furnitureTypeQuantities.get(Furniture.valueOf(type.name())) != null ? furnitureTypeQuantities.get(Furniture.valueOf(type.name())) : 0;
+    }
 
     public float getTypeCost(Furniture type) {
-        return furnitureTypeQuantities.get(type)!=null ? furnitureTypeQuantities.get(type)*Furniture.valueOf(type.name()).cost():0 * Furniture.valueOf(type.name()).cost();
+        return furnitureTypeQuantities.get(type) != null ? furnitureTypeQuantities.get(type) * Furniture.valueOf(type.name()).cost() : 0 * Furniture.valueOf(type.name()).cost();
     }
 
     public int getTotalOrderQuantity() {
         return furnitureTypeQuantities.values().stream().mapToInt(Integer::intValue).sum();
+
     }
 }
